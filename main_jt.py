@@ -14,6 +14,7 @@ api = Api(app)
 hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
+
 class PeopleCounter(Resource):
     def get(self):
         img = cv2.imread('foto.png')
@@ -24,6 +25,7 @@ class PeopleCounter(Resource):
         # print(img.shape)
         # print(len(boxes))
         return {'count': len(boxes)}
+
 
 class HelloWorld(Resource):
     def get(self):
